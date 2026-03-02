@@ -1,0 +1,376 @@
+* {
+    box-sizing: border-box;
+    font-family: 'SF UI Display Light', sans-serif;
+}
+
+.zoom {
+    width:50px;
+    height:50px;
+    position:absolute;
+    right:0;
+    top:2%;
+    z-index: 1000;
+}
+
+body {
+    margin: 0;
+    padding: 0;    
+}
+
+ /* Owl */
+
+ .owl-carousel {
+    position:relative;
+    z-index: 0;
+ }
+
+ .owl-carousel .owl-item img {    
+    height: 320px;
+ }
+
+ .owl-nav button {
+    position:absolute;
+    z-index: 10;    
+    background-color: #F6F6F6;
+ }
+
+ .owl-prev span, .owl-next span {
+display:none;
+}
+
+.prev-slide,
+.next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    background-color: #fff;
+    opacity: 0.5;
+    border-radius: 50%;
+    width:40px;
+    height: 40px;
+    border: none;
+    color: #000;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,.5));
+    font-family: monospace;
+    font-size:1.4rem;
+    transition: .3s;
+}
+
+.prev-slide:hover, .next-slide:hover {
+    opacity: 0.8;    
+}
+
+.prev-slide {left: 15px;}
+
+.next-slide {right: 15px;}
+
+.owl-theme .owl-dots {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 65px;
+    height: 2px;
+    margin:0 5px;    
+}
+
+.owl-dot.active span {
+  background: #FF5C00!important;
+}
+  /* End Owl */
+
+.products-wrapper {
+    display:grid;
+    grid-auto-flow: column;
+    padding:50px 0;    
+    grid-template-rows: repeat(3, 1fr);    
+    grid-gap: 1.8rem;
+    justify-content:center;
+}
+
+.product-cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width:480px;
+    max-height:700px;    
+}
+
+.card-item__product {
+    width: 100%;    
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s ease-in-out;
+    cursor: pointer;
+    text-align: left;
+    color: #333;
+    background-color: white;
+    border-radius: 7px;
+    background-color: #F6F6F6;
+    
+}
+
+@media screen and (max-width: 768px){
+    .card-item__product{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+.slider-wrapper {
+    position:relative;
+}
+
+.slider-wrapper img {
+    object-fit: cover;   
+    width: 100%;    
+}
+
+.hover-desc {
+    position: absolute;
+    z-index: 5;
+    bottom: 0.7rem;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+    padding: 1em;
+    font-size:0.9em;
+}
+
+.main {
+    padding:20px;
+}
+
+.item-name {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-top: 10px;
+    word-break: break-word;     
+}
+
+.ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em;
+}
+
+.article-header {
+    font-weight: bold;
+    font-size: 0.85rem;
+    color:#767676;
+    margin-top: 5px;
+}
+
+.material-list {
+    display: flex;
+    justify-content: flex-start;
+    padding:15px 0 20px;   
+}
+
+.material-list div {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    background-color: #F6F6F6;
+    border-radius: 18px;
+    padding:8px 12px;
+    font-size: 0.85rem;
+}
+
+.material-list div input {
+    display:none;
+}
+
+.material-list div.active-material  {
+   background-color:#000; 
+   color:#FFF;
+}
+
+.material-list div.active-material::before {
+    content:'';
+    display:block;
+    background-image:url(../images/tick.png);
+    background-size: cover; 
+    margin-right: 7px;   
+    width:20px;
+    height:20px;
+}
+
+.order-block {
+    display: inline-flex;
+    justify-content: space-between;
+    width:100%;
+}
+
+.price-block span {
+    color:black;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 0.3rem;
+} 
+
+.order-button  {    
+    display:flex;
+    justify-content: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+    width:48%;  
+}
+
+.order-button button {
+    background-color: #FF5C00;
+    color: white;    
+    font-size:0.9em;
+    border:none;
+    width:100%;
+    border-radius: 15px;
+    margin-top: 5px;
+    cursor:pointer;
+    transition: .3s;
+}
+
+.order-button button:hover {
+    scale:1.05;
+}
+
+.bottom-block {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.8rem;
+    border-top: 1px solid #e3e3e3;
+    width:100%;
+    margin: 1.3rem 0 0 0;
+}
+
+.bottom-block .like {
+    display: inline-flex;
+    align-items: center;
+    background-color: #F6F6F6;
+    border-radius: 18px;
+    padding:0 12px 5px 7px;
+
+} 
+
+.bottom-block .like span {
+    display: block;
+    color:#000;
+    font-size: 0.85rem;
+} 
+
+.bottom-block .liked svg path {
+    fill:#FF5C00;
+} 
+
+.bottom-block svg {
+    display: block;
+    margin-top: 5px;
+    margin-right: 4px;
+}
+
+.btn-calculate {
+    display: block;
+    text-decoration: none;    
+}
+
+
+.card-item__product:hover {    
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,.2);
+    transition: 0.3s;
+}
+
+.card-item__product:hover .hover-desc, .card-item__product:hover .order-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@media only screen and (max-width: 768px) {
+    
+    .prev-slide, .next-slide {
+        display: none !important;
+    }
+
+    .owl-dots {
+        display: block !important;
+    }
+
+    .card-item__product {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .item-name {
+        font-size: 1.1rem;
+    }
+
+    .btn-calculate {
+        display: inline-block;
+    }
+
+    .hover-desc {
+        display: none;
+    }
+    
+    .zoom {
+    display: none;
+}
+
+.products-wrapper {
+    display:flex;
+    flex-flow:column; 
+    width:100%;       
+}
+
+.product-cards-container {
+    display:block;
+    width:100%;
+    max-width: max-content;
+    min-height: max-content;
+}
+
+.order-block {
+    display:flex;
+    flex-flow:column;
+}
+
+.order-button {
+    visibility: visible;
+    opacity: 1;    
+}
+
+.order-button button {
+    padding:15px 0;
+    margin-top:20px;
+}
+
+.owl-item {
+    width:auto;
+}
+
+.owl-carousel .owl-item img {
+    height: auto;
+}
+}
