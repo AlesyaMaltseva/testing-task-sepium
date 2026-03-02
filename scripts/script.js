@@ -34,11 +34,12 @@ $('.prev-slide, .next-slide').on('click', function(e){
     }
 });
 
-
+if ($(window).width() > 768) {
 $('.card-item__product').hover(
     function () {$('.hover-desc', this).show();},
     function () {$('.hover-desc', this).hide();}
 );
+};
 
 $('.card-item__product').hover(
     function () {$('.order-button', this).show();},
