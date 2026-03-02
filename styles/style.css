@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
     font-family: 'SF UI Display Light', sans-serif;
+    -webkit-tap-highlight-color: transparent;  
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
 }
 
 .zoom {
